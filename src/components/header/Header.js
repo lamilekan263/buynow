@@ -3,9 +3,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import MenuIcon from "@material-ui/icons/Menu";
+// import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+// import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+// import MenuIcon from "@material-ui/icons/Menu";
 
 import './Header.css'
 import { connect } from 'react-redux';
