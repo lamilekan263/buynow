@@ -3,8 +3,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-// import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-// import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 // import MenuIcon from "@material-ui/icons/Menu";
 
 import './Header.css'
@@ -50,14 +50,25 @@ const Header = ({user}) => {
             </Link>
 
             <ul className="navbar-nav ">
-              <li className="nav-item">
+              <li className="nav-item d-none d-md-block">
                 <Link className="nav-link" href="#">
-                  Shop
+                  basket(2)
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item d-lg-none">
                 <Link className="nav-link" href="#">
-                  Link
+                  <ShoppingBasketIcon className=" favoriteIcon " />
+                  <strong>
+                    <sup>234</sup>
+                  </strong>
+                </Link>
+              </li>
+              <li className="nav-item ">
+                <Link className="nav-link" href="#">
+                  <FavoriteBorderIcon className=" favoriteIcon p-0 " />
+                  <strong>
+                    <sup>6</sup>
+                  </strong>
                 </Link>
               </li>
               <li className="nav-item ">
