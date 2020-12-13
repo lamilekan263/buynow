@@ -1,9 +1,19 @@
 
-.shoptItem__imageContainer{
+/* .shoptItem__imageContainer{
     height:400px;
+} */
+/* .shopItem__container{
+    border:1px solid red;
 }
-.shopItem__container img{
-    height: 100%;
+.shoptItem__imageContainer{
+    height:300px;
+   
+     
+  
+
+} */
+.shoptItem__imageContainer {
     width: 100%;
-    object-fit:contain;
+    height: 100%; 
+    object-fit: contain;
 }

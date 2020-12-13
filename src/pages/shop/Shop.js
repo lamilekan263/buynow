@@ -32,7 +32,7 @@ const Shop = ({shopState}) => {
             <div className="col-sm-12 col-md-10">
               {" "}
               <div className="shop__productsList">
-                <div className="row justify-content-between">
+                <div className="row justify-content-around">
                   {shopState.map((shop) => {
                     return <ShopItem image={shop.imageSrc} />;
                   })}
