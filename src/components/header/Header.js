@@ -25,7 +25,7 @@ const Header = ({user}) => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <Link className="navbar-brand d-lg-none" href="#">
+          <Link className="navbar-brand d-lg-none" to="/">
             <h1>BuyNow</h1>
           </Link>
           <div
@@ -45,18 +45,18 @@ const Header = ({user}) => {
               </li>
             </ul>
 
-            <Link className="navbar-brand d-none d-lg-block" href="#">
+            <Link className="navbar-brand d-none d-lg-block" to="/">
               <h1>BuyNow</h1>
             </Link>
 
             <ul className="navbar-nav ">
               <li className="nav-item d-none d-md-block">
-                <Link className="nav-link" href="#">
+                <Link className="nav-link" to="/cart">
                   basket(2)
                 </Link>
               </li>
               <li className="nav-item d-lg-none">
-                <Link className="nav-link" href="#">
+                <Link className="nav-link" to="/cart">
                   <ShoppingBasketIcon className=" favoriteIcon " />
                   <strong>
                     <sup>234</sup>
