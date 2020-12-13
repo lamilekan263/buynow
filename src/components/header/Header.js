@@ -14,10 +14,6 @@ const Header = ({user}) => {
     return (
       <div className="header  py-1">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Link className="navbar-brand d-lg-none" href="#">
-            BuyNow
-          </Link>
-
           <button
             className="navbar-toggler"
             type="button"
@@ -29,7 +25,9 @@ const Header = ({user}) => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
+          <Link className="navbar-brand d-lg-none" href="#">
+            <h1>BuyNow</h1>
+          </Link>
           <div
             className="collapse navbar-collapse justify-content-between"
             id="navbarToggle"
@@ -48,10 +46,10 @@ const Header = ({user}) => {
             </ul>
 
             <Link className="navbar-brand d-none d-lg-block" href="#">
-              BuyNow
+              <h1>BuyNow</h1>
             </Link>
 
-            <ul className="navbar-nav">
+            <ul className="navbar-nav ">
               <li className="nav-item">
                 <Link className="nav-link" href="#">
                   Shop
@@ -65,7 +63,7 @@ const Header = ({user}) => {
               <li className="nav-item ">
                 {!user ? (
                   <Link className="nav-link" to="/user/signin">
-                   Sign In
+                    Sign In
                   </Link>
                 ) : (
                   <div className="nav-link" onClick={() => auth.signOut()}>
