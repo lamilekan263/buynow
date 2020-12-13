@@ -13,7 +13,71 @@ import { auth } from '../../firebase/firebase';
 const Header = ({user}) => {
     return (
       <div className="header  py-1">
-        <nav className="navbar-expand-lg navbar-light bg-light static-top container">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <Link className="navbar-brand d-lg-none" href="#">
+            BuyNow
+          </Link>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarToggle"
+            aria-controls="navbarToggle"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            className="collapse navbar-collapse justify-content-between"
+            id="navbarToggle"
+          >
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link active" href="#">
+                  New Arrival <span className="sr-only">(current)</span>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/collections/shop">
+                  Collections
+                </Link>
+              </li>
+            </ul>
+
+            <Link className="navbar-brand d-none d-lg-block" href="#">
+              BuyNow
+            </Link>
+
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link" href="#">
+                  Shop
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" href="#">
+                  Link
+                </Link>
+              </li>
+              <li className="nav-item ">
+                {!user ? (
+                  <Link className="nav-link" to="/user/signin">
+                   Sign In
+                  </Link>
+                ) : (
+                  <div className="nav-link" onClick={() => auth.signOut()}>
+                    Sign Out
+                  </div>
+                )}
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        {/* <nav className="navbar-expand-lg navbar-light bg-light static-top container">
           <div className="d-flex justify-content-between ">
             <div className="header__leftSidenav">
               <button
@@ -82,9 +146,7 @@ const Header = ({user}) => {
               <FavoriteBorderIcon className=" favoriteIcon" />
             </div>
           </div>
-        </nav>
-        
-
+        </nav> */}
         {/* <nav>
           <div className="container">
             <div className="header__largeDevice">
