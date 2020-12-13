@@ -56,7 +56,7 @@ const Header = ({user}) => {
             </div>
             <div className=" header__brand">
               <Link to="/">
-                <h1>BUY NOW</h1>
+                <p>BUY NOW</p>
               </Link>
             </div>
             <div className="header__rightSidenav d-flex justify-content-between ">
