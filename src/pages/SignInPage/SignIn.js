@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom';
-import Button from '../../components/button/Button'
 import Input from '../../components/Input/Input';
 import { auth } from '../../firebase/firebase';
 import './SignIn.css'

@@ -1,5 +1,5 @@
 import React from 'react';
-import sure from '../../Assets/denim.jpeg';
+
 
 import './ShopItem.css'
 
