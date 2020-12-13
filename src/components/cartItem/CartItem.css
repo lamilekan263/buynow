@@ -1,0 +1,8 @@
+.cartItem__displayImage{
+  
+    width: 350px;
+}
+.cartItem__displayImage img{
+    width: 100%;
+}
+

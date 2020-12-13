@@ -1,0 +1,31 @@
+.footerLinks__header{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin-bottom: 20px;
+    
+}
+
+.footerLinks{
+    font-family:  'Poppins', sans-serif;
+    font-weight: 100;
+}
+
+.footer__subscribtion{
+    text-align:center;
+}
+
+.footer__subscribtion  p{
+    font-weight:300;
+}
+.form__content{
+    height:max-content;
+}
+.form__content input {
+    border: none;
+}
+
+.form__content button {
+    border: none;
+    background-color: #111;
+    color:white;
+}

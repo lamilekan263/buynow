@@ -1,0 +1,13 @@
+.showcase__section{
+    height: max-content;
+}
+.showcase__image{
+    width: 33.3%;
+    object-fit: contain;
+    
+}
+
+.showcase__newArrivals img{
+     width: 25%;
+    object-fit: contain;
+}

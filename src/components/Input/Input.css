@@ -1,0 +1,14 @@
+.inputBar{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px;
+    border:none;
+    border-bottom: 1px solid black;
+    outline:none;
+    
+}
+
+.inputBar:active{
+    background-color: white;
+}

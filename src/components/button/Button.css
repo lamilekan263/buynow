@@ -1,0 +1,29 @@
+.button{
+    border: 1px solid white;
+    width: max-content;
+    
+    padding: 10px 20px;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color:whitesmoke;
+    color:black;
+}
+
+
+
+.buttonBlack{
+    border: 1px solid white;
+    width: max-content;
+    padding: 10px 20px;
+    background-color:black;
+    color:white;
+}
+
+.buttonBlack:hover{
+    cursor: pointer;
+    background-color:whitesmoke;
+    color:black;
+    border: 1px solid black
+}

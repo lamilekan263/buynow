@@ -1,0 +1,36 @@
+.section__container{
+   
+     background-size: cover; 
+    color: white;
+  height: 550px; 
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+     object-fit: contain;
+     display: flex;
+     align-items: flex-end;
+     padding-bottom: 150px;
+}
+
+.section__contentBox{
+    width:400px;
+    
+    
+}
+.section__button{
+    border: 1px solid white;
+    width: max-content;
+    padding: 10px 20px;
+}
+.section__button:hover{
+    cursor: pointer;
+    background-color:whitesmoke;
+    color:black;
+}
+
+@media(max-width: 760px){
+    .section__contentBox{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
