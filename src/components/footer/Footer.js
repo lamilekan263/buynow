@@ -26,11 +26,13 @@ const Footer = () => {
                 <div className="form__content container">
                   <form action="" className="row justify-content-center">
                     <input
-                      className="shadow p-2 col-sm-12"
+                      className="shadow p-2 col-sm-12 col-md-10"
                       type="email"
                       placeholder="your email address"
                     />
-                    <button className="shadow col-sm-12 my-3 p-2">Join</button>
+                    <button className="shadow col-sm-12 col-md-2 mb-lg-3 mt-lg-3 p-2">
+                      Join
+                    </button>
                   </form>
                 </div>
               </div>

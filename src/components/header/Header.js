@@ -36,7 +36,7 @@ const Header = ({user}) => {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" href="#">
+                    <Link className="nav-link" to='/collections/shop'>
                       Collections
                     </Link>
                   </li>
