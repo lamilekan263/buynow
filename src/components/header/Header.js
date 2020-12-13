@@ -83,6 +83,7 @@ const Header = ({user}) => {
             </div>
           </div>
         </nav>
+        
 
         {/* <nav>
           <div className="container">
