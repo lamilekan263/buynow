@@ -9,7 +9,7 @@ const ShopItem = ({image}) => {
         <img
           src={image}
           alt=""
-          className="shoptItem__imageContainer col-sm-12 col-md-6 col-lg-3 shadow my-3"
+          className="shoptItem__imageContainer col-sm-12 col-md-5 col-lg-4 shadow my-3"
         />
    
     );

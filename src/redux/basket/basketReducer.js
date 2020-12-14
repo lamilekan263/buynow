@@ -1,3 +1,5 @@
+import { basketTypes } from './basketTypes'
+
 const initialState = {
     basket : []
 }
@@ -5,14 +7,19 @@ const initialState = {
 
 const basketReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_TO_BASKET': 
-            return {
+      case basketTypes.ADD_TO_BASKET:
+        return {
+          ...state,
+          basket: [...state.basket, action.payload],
+        };
+        case basketTypes.REMOVE_FROM_BASKET:
+            return{
                 ...state,
-                basket : [...state.basket, action.payload]
+                basket: []
             }
-        
-        default:
-            return state
+
+      default:
+        return state;
     }
 }
 

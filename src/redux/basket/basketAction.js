@@ -1,13 +1,14 @@
 import { basketTypes } from './basketTypes'
 
-export const addToBasket = (id, title, image, price) => {
+export const addToBasket = (id, title, image, price, description) => {
   return {
-    type: "ADD_TO_bASKET",
+    type: basketTypes.ADD_TO_BASKET,
     payload: {
       id,
       title,
       image,
       price,
+      description,
     },
   };
 };

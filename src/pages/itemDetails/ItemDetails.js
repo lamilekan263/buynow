@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import blackTops from '../../Assets/blackTop.jpg'
 import { connect } from 'react-redux'
 import Button from '../../components/button/Button'
+import { addToBasket } from '../../redux/basket/basketAction';
 
 // import './itemDetails.css'
 
 
 
-const ItemDetails = (props) => {
+const ItemDetails = ({ shopDetails, addTobasket }) => {
+  useEffect(() => {
+    console.log(shopDetails);
+  }, [shopDetails]);
+ 
 
     return (
       <div className="itemDetails mt-4">
@@ -20,30 +24,36 @@ const ItemDetails = (props) => {
                 <div className="img-container">
                   <img
                     className="card-img-top"
-                    src={blackTops}
+                    src={shopDetails.imageSrc}
                     alt="Card  cap"
                   />
                 </div>
               </div>
               <div className="col-sm-12 col-md-6">
                 <div className="card-body">
-                  <h2 className="card-title">Black Tops</h2>
+                  <h2 className="card-title">{ shopDetails.name }</h2>
                   <p className="card-text">
-                    <strong>$1200</strong>
+                    <strong>${shopDetails.price}</strong>
                   </p>
                   <div className="d-flex">
-                    <Button button="ADD TO BAG" buttonType="buttonBlack" />
+                    <Button
+                      button="ADD TO BAG"
+                      buttonType="buttonBlack"
+                      btnClicked={addTobasket}
+                    />
                     <Button
                       button={<FavoriteBorderIcon />}
                       buttonType="buttonBlack"
                     />
-                                </div>
-                                <div className="product-details my-4">
-                                    <h4>
-                                        <strong>Product Details</strong>
-                                    </h4>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit rerum accusantium itaque sit at adipisci, aliquid nobis voluptatum quos qui odit hic, dicta aliquam, praesentium eos minima consectetur quidem id!</p>
-                                </div>
+                  </div>
+                  <div className="product-details my-4">
+                    <h4>
+                      <strong>Product Details</strong>
+                    </h4>
+                    <p>
+                      {shopDetails.details}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -53,10 +63,15 @@ const ItemDetails = (props) => {
     );
 }
 
-const mapStateToProps = state => {
-    return {
-        shopDetails : state.shop.shopdata
-    }
-}
+const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps)
+  return {
+    shopDetails: state.shop.shopdata[ownProps.match.params.id -1],
+  };
+};
 
-export default connect(mapStateToProps)(ItemDetails);
+const mapDispatchToProps = (dispatch) => ({
+  addTobasket: (item) => dispatch(addToBasket(item)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemDetails);

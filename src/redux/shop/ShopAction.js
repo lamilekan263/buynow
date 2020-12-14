@@ -21,9 +21,10 @@ export const getDresses = () => {
         type: shopTypes.getDresses,
     }
 }
-export const getJackets = () => {
+export const getJackets = (item) => {
   return {
     type: "GET_JACKETS",
+    payload: item
   };
 };
 export const getSkirts = () => {
