@@ -4,7 +4,7 @@ import jacket2 from "../../Assets/jacket2.jpeg";
 import jacket3 from "../../Assets/jacket3.jpeg";
 import shirt from "../../Assets/shirts.jpg";
 import blackTop from "../../Assets/blackTop.jpg";
-import sunyu from "../../Assets/sunyu.jpg";
+// import sunyu from "../../Assets/sunyu.jpg";
 
 const INTITIAL_STATE = {
   shopdata: [
