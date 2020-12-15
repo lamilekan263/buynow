@@ -1,5 +1,5 @@
 import basketReducer from "./basket/basketReducer";
-import favoritesReducer from "./favorite/basketReducer";
+import favoritesReducer from "./favorite/favoritesReducer";
 import shopReducer from "./shop/ShopReducer";
 import userReducer from "./userAuth/userReducer";
 

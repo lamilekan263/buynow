@@ -39,7 +39,7 @@ const ItemDetails = ({ shopDetails, addTobasket }) => {
                     <Button
                       button="ADD TO BAG"
                       buttonType="buttonBlack"
-                      btnClicked={addTobasket}
+                      btnClicked={() =>addTobasket(shopDetails)}
                     />
                     <Button
                       button={<FavoriteBorderIcon />}

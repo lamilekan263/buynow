@@ -9,7 +9,7 @@ import blackTop from "../../Assets/blackTop.jpg";
 const INTITIAL_STATE = {
   shopdata: [
     {
-      id: "1",
+      id: 1,
       name: "jacket",
       price: 50,
       imageSrc: jacket1,
