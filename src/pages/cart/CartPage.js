@@ -20,7 +20,12 @@ const CartPage = ({ basketItems, removeFromBasket }) => {
           <hr />
         </div>
         <div className="cartItems">
-          {basketItems.map((basket) => {
+          {basketItems.length === 0 ?
+             <div>
+                 <h1 className="mt-4">You currently do not have any items to purchase now</h1>
+                 <h2 className="mt-4">Shop Now!!!</h2>
+              </div> : 
+            basketItems.map((basket) => {
             console.log(typeof basket.id);
             return (
               <CartItem
@@ -35,8 +40,8 @@ const CartPage = ({ basketItems, removeFromBasket }) => {
           })}
         </div>
         <>
-          <CartSubTotal basketItems={basketItems} />
-        </>
+        <CartSubTotal basketItems ={basketItems} />
+          </>
       </div>
     </div>
   );
