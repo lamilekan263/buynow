@@ -1,11 +1,11 @@
 import React from 'react'
-import CurrencyFormat from "react-currency-format";
+
 import CartItem from '../../components/cartItem/CartItem';
-import Button from '../../components/button/Button.js'
-import paymentImage from '../../Assets/payment.png'
+
 import { connect } from 'react-redux';
 import { deleteFromBasket } from '../../redux/basket/basketAction';
-import { getBasketTotal } from '../../redux/basket/basketReducer';
+import CartSubTotal from './CartSubTotal';
+
 
 
 
@@ -34,26 +34,9 @@ const CartPage = ({ basketItems, removeFromBasket }) => {
             );
           })}
         </div>
-        <div className="cart__payment d-flex flex-column align-items-center my-5">
-          <CurrencyFormat
-            renderText={(value) => (
-              <>
-                <p>Subtotal({basketItems?.length}):</p>
-                <strong>{value}</strong>
-                <small className="subtotal__gift">
-                  <input type="checkbox" /> This order contains a gift
-                </small>
-              </>
-            )}
-            decimalScale={2}
-            value={getBasketTotal(basketItems)}
-            displayType={"text"}
-            thousandSeparator={true}
-            prefix={"$"}
-          />
-          <Button button="PROCEED TO PAYMENT" buttonType="buttonBlack" />
-          <img src={paymentImage} alt="payment logo" className="mt-3" />
-        </div>
+        <>
+          <CartSubTotal basketItems={basketItems} />
+        </>
       </div>
     </div>
   );
