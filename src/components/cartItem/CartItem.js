@@ -20,12 +20,12 @@ const CartItem = ({ id, imageSrc, price, description, removeFromBasket }) => {
           <strong>$</strong>
           <small>{price}</small>
         </p>
-        {/* <Button
+        <Button
           button="Remove from basket"
           buttonType="buttonBlack"
           btnClicked={() => removeFromBasket(id)}
-        /> */}
-        <button onClick={() =>removeFromBasket(id)}>RemoveFromBasket</button>
+        />
+       
       </div>
 
       <hr />
