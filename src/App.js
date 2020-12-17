@@ -12,6 +12,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import Shop from "./pages/shop/Shop";
 import { noUser, updateUser } from './redux/userAuth/userAction';
 import ItemDetails from './pages/itemDetails/ItemDetails';
+import Payment from './pages/payment/Payment';
 
 function App({ setUser, noUser }) {
   useEffect(() => {
@@ -35,6 +36,7 @@ function App({ setUser, noUser }) {
         <Route path="/user/signup" component={SignUp} />
         <Route exact path="/collections/shop" component={Shop} />
         <Route exact path="/collections/shop/:id" component={ItemDetails} />
+        <Route exact path="/checkout" component={Payment} />
       </Switch>
       <Footer />
     </div>

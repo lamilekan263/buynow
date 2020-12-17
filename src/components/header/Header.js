@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-// import MenuIcon from "@material-ui/icons/Menu";
 
 import './Header.css'
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase';
+
 const Header = ({ user, basket }) => {
   return (
     <div className="header  py-1">
@@ -34,7 +34,7 @@ const Header = ({ user, basket }) => {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link active" href="#">
+              <Link className="nav-link active" to="#">
                 New Arrival <span className="sr-only">(current)</span>
               </Link>
             </li>
@@ -64,7 +64,7 @@ const Header = ({ user, basket }) => {
               </Link>
             </li>
             <li className="nav-item ">
-              <Link className="nav-link" href="#">
+              <Link className="nav-link" to="#">
                 <FavoriteBorderIcon className=" favoriteIcon p-0 " />
                 <strong>
                   <sup>6</sup>
@@ -90,7 +90,6 @@ const Header = ({ user, basket }) => {
 };
 
 const mapStateToProps = state => {
-  console.log(state)
   return {
     user: state.user.currentUser,
     basket : state.basket.basket

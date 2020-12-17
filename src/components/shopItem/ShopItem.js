@@ -1,17 +1,21 @@
 import React from 'react';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 import './ShopItem.css'
 
 const ShopItem = ({image}) => {
     return (
-    
-        <img
+      <div className="shopItem__container">
+        <LazyLoadImage
           src={image}
           alt=""
-          className="shoptItem__imageContainer col-sm-12 col-md-5 col-lg-4 shadow my-3"
+          effect="blur"
+          className="shoptItem__imageContainer  shadow"
+          visibleByDefault={image.src === image}
         />
-   
+        
+      </div>
     );
 }
 

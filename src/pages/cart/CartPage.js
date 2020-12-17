@@ -22,8 +22,8 @@ const CartPage = ({ basketItems, removeFromBasket }) => {
         <div className="cartItems">
           {basketItems.length === 0 ?
              <div>
-                 <h1 className="mt-4">You currently do not have any items to purchase now</h1>
-                 <h2 className="mt-4">Shop Now!!!</h2>
+                 <h5 className="mt-4">You currently do not have any items to purchase now</h5>
+                 <h3 className="mt-4">Shop Now!!!</h3>
               </div> : 
             basketItems.map((basket) => {
             console.log(typeof basket.id);

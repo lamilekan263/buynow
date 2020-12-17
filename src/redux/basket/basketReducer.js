@@ -14,15 +14,6 @@ const basketReducer = (state = initialState, action) => {
           basket: [...state.basket, action.payload],
         };
       case basketTypes.REMOVE_FROM_BASKET:  
-          // let index = state.basket.findIndex((basketItem) => basketItem.id  === action.payload);
-          // let newBasket = [...state.basket]
-          // console.log(newBasket)
-          // if (index >= 0) {
-          //   newBasket.splice(index, 1)
-          //   console.log(newBasket);
-          //     }else{
-          //       console.warn(`sorry you can't remove item with index ${index}`)
-          //     }
           return {
               ...state,
               basket: state.basket.filter(newbasket => newbasket.id !== action.payload)

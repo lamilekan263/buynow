@@ -1,0 +1,11 @@
+@media(min-width: 760px){
+    .itemDetails{
+    height: 400px;
+}
+    .img-container{
+        height: 400px;
+    }
+    .card-img-top{
+    height: 100%;
+}
+}

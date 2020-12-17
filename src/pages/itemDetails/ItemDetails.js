@@ -1,27 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { connect } from 'react-redux'
 import Button from '../../components/button/Button'
 import { addToBasket } from '../../redux/basket/basketAction';
 
-// import './itemDetails.css'
+
+import './ItemDetails.css'
 
 
 
 const ItemDetails = ({ shopDetails, addTobasket }) => {
-  useEffect(() => {
-    console.log(shopDetails);
-  }, [shopDetails]);
- 
-
     return (
-      <div className="itemDetails mt-4">
+      <div className="itemDetails mt-4" >
         <div className="container">
           <div className="card">
             <div className="row">
               <div className="col-sm-12 col-md-6">
-                <div className="img-container">
+                <div className="img-container" >
                   <img
                     className="card-img-top"
                     src={shopDetails.imageSrc}
@@ -31,7 +27,7 @@ const ItemDetails = ({ shopDetails, addTobasket }) => {
               </div>
               <div className="col-sm-12 col-md-6">
                 <div className="card-body">
-                  <h2 className="card-title">{ shopDetails.name }</h2>
+                  <h2 className="card-title">{shopDetails.name}</h2>
                   <p className="card-text">
                     <strong>${shopDetails.price}</strong>
                   </p>
@@ -39,7 +35,7 @@ const ItemDetails = ({ shopDetails, addTobasket }) => {
                     <Button
                       button="ADD TO BAG"
                       buttonType="buttonBlack"
-                      btnClicked={() =>addTobasket(shopDetails)}
+                      btnClicked={() => addTobasket(shopDetails)}
                     />
                     <Button
                       button={<FavoriteBorderIcon />}
@@ -50,9 +46,7 @@ const ItemDetails = ({ shopDetails, addTobasket }) => {
                     <h4>
                       <strong>Product Details</strong>
                     </h4>
-                    <p>
-                      {shopDetails.details}
-                    </p>
+                    <p>{shopDetails.details}</p>
                   </div>
                 </div>
               </div>
@@ -64,7 +58,6 @@ const ItemDetails = ({ shopDetails, addTobasket }) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps)
   return {
     shopDetails: state.shop.shopdata[ownProps.match.params.id -1],
   };
