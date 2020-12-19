@@ -11,12 +11,8 @@ const CartSubTotal = ({ basketItems, user }) => {
   const history = useHistory();
 
   const handlePayment = () => {
-    if (user === null) {
-      alert('Please Sign in to pay for your Goods')
-      history.push('/user/signin')
-    } else {
-      history.push('/checkout')
-    }
+    !user ? history.push('/user/signin') : history.push('/checkout')
+
   };
   return (
     <div className="cart__payment d-flex flex-column align-items-center my-5">
