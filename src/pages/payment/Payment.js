@@ -10,12 +10,19 @@ const Payment = () => {
     const [ cvc , setcvc ] = useState('')
     const [ expiry , setexpiry ] = useState('')
     const [number, setnumber] = useState('')
-    const [focus, setfocus] = useState("");
+  const [focus, setfocus] = useState("");
+  
+ const handleSubmit = e => {
+    e.preventDefault()
+   if (name || cvc || expiry || number || focus !== '') {
+      
+    }
+  }
     return (
       <div className="my-5">
         <div className="container">
           <div className="row">
-            <div className="col-md-4 mt-n3 mb-5 ">
+            <div className="col-md-6 col-lg-4 mt-n3 mb-5 ">
               {" "}
               <Cards
                 cvc={cvc}
@@ -25,21 +32,20 @@ const Payment = () => {
                 number={number}
               />
             </div>
-            <div className="col-md-8">
+            <div className="col-md-6 col-lg-8">
               <form>
+                <h3>Payment Card Details</h3>
                 <div className="form-row">
                   <div className="form-group col-md-6">
                     <label htmlFor="number">Card Number</label>
                     <input
-                      type="number"
+                      type="tel"
                       className="form-control"
                       name="number"
                       placeholder="Card Number"
                       value={number}
                       onChange={(e) => setnumber(e.target.value)}
                       onFocus={(e) => setfocus(e.target.name)}
-                      min="1"
-                      max="16"
                     />
                   </div>
                   <div className="form-group col-md-6">
@@ -81,10 +87,134 @@ const Payment = () => {
                     />
                   </div>
                 </div>
-                <button type="submit" className="btn btn-primary col-12">
+                <h3>Billing Address</h3>
+
+                <div className="form-row">
+                  <div className="form-group col-md-6">
+                    <label htmlFor="firstNAme">First Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="firstNAme"
+                      placeholder="First Name"
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label htmlFor="LatsName">Last Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="LatsName"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-group col-md-6">
+                    <label htmlFor="Email">Email Address</label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="Email"
+                      placeholder="Email Address"
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label htmlFor="telephone">Phone Number</label>
+                    <input
+                      type="tel"
+                      className="form-control"
+                      id="telephone"
+                      placeholder="Phone Number"
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="inputAddress">Address</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputAddress"
+                    placeholder="1234 Main St"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="inputAddress2">Address 2</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputAddress2"
+                    placeholder="Apartment, studio, or floor"
+                  />
+                </div>
+                <div className="form-row">
+                  <div className="form-group col-md-6">
+                    <label htmlFor="inputCity">City</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="inputCity"
+                    />
+                  </div>
+                  <div className="form-group col-md-4">
+                    <label htmlFor="inputState">State</label>
+                    {/* <select id="inputState" className="form-control">
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                    </select> */}
+                  </div>
+                  <div className="form-group col-md-2">
+                    <label htmlFor="inputZip">Zip</label>
+                    <input type="text" className="form-control" id="inputZip" />
+                  </div>
+                </div>
+                <button
+                  onClick={handleSubmit}
+                  className="btn btn-primary col-12"
+                >
                   Check Out
                 </button>
               </form>
+            </div>
+            {/* modal */}
+            <div
+              className="modal fade"
+              id="exampleModalLong"
+              tabIndex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLongTitle"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLongTitle">
+                      Modal title
+                    </h5>
+                    <button
+                      type="button"
+                      className="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div className="modal-body">...</div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" className="btn btn-primary">
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

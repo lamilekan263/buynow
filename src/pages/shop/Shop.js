@@ -1,12 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-
 import ShopItem from '../../components/shopItem/ShopItem'
 import { getDenim } from '../../redux/shop/ShopAction'
 import './Shop.css'
 
-const Shop = ({ shopState, filterShop }) => {
+const Shop = ({ shopState, filterShop, filteredShopData }) => {
   const categories = [
     "shop all",
     "Tops",
@@ -45,19 +44,39 @@ const Shop = ({ shopState, filterShop }) => {
             {" "}
             <div className="shop__productsList">
               <div className="row justify-content-between">
-                {shopState.map((shop) => {
-                  return (
-                    <div className='col-md-4 my-2'>
-                      <Link to={`/collections/shop/${shop.id}`} key={shop.id}>
-                        {" "}
-                        <ShopItem
-                          image={shop.imageSrc}
-                          onClick={() => console.log(shop.id)}
-                        />
-                      </Link>
-                    </div>
-                  );
-                })}
+                {filteredShopData.length <= 0
+                  ? shopState.map((shop) => {
+                      return (
+                        <div className="col-md-4 my-2">
+                          <Link
+                            to={`/collections/shop/${shop.id}`}
+                            key={shop.id}
+                          >
+                            {" "}
+                            <ShopItem
+                              image={shop.imageSrc}
+                              onClick={() => console.log(shop.id)}
+                            />
+                          </Link>
+                        </div>
+                      )
+                    })
+                  : filteredShopData.map((shop) => {
+                      return (
+                        <div className="col-md-4 my-2">
+                          <Link
+                            to={`/collections/shop/${shop.id}`}
+                            key={shop.id}
+                          >
+                            {" "}
+                            <ShopItem
+                              image={shop.imageSrc}
+                              onClick={() => console.log(shop.id)}
+                            />
+                          </Link>
+                        </div>
+                      );
+                    })}
               </div>
             </div>
           </div>
@@ -69,7 +88,8 @@ const Shop = ({ shopState, filterShop }) => {
 
 const mapStateToProps = state =>{
    return {
-     shopState : state.shop.shopdata
+     shopState : state.shop.shopdata,
+     filteredShopData : state.shop.filteredShopData
    };
 }
 

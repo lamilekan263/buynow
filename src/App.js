@@ -32,9 +32,10 @@ function App({ setUser, noUser }) {
     });
   });
   return (
-    <div className="App">
-      <Header />
-      <Suspense fallback ={<Spinner />}>
+    <Suspense fallback={<Spinner />}>
+      <div className="App">
+        <Header />
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/cart" component={CartPage} />
@@ -44,9 +45,10 @@ function App({ setUser, noUser }) {
           <Route exact path="/collections/shop/:id" component={ItemDetails} />
           <Route exact path="/checkout" component={Payment} />
         </Switch>
-      </Suspense>
-      <Footer />
-    </div>
+
+        <Footer />
+      </div>
+    </Suspense>
   );
 }
 const mapDispatchToProps = dispatch => {

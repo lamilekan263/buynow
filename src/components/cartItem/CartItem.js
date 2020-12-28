@@ -6,15 +6,22 @@ import Button from '../button/Button'
 
 import './CartItem.css'
 
-const CartItem = ({ id, imageSrc, price, description, removeFromBasket }) => {
-  console.log(id)
+const CartItem = ({
+  id,
+  imageSrc,
+  price,
+  description,
+  removeFromBasket,
+  quantity,
+}) => {
+  console.log(id);
   return (
-    <div className="cartItem d-flex justify-content-center mt-3">
-      <div className="cartItem__displayImage">
+    <div className="cartItem d-flex flex-wrap justify-content-center mt-3">
+      <div className="cartItem__displayImage ">
         <img src={imageSrc} alt="" />
       </div>
 
-      <div className="cartdetails ml-3">
+      <div className="cartdetails my-3 ">
         <p>{description}</p>
         <p>
           <strong>$</strong>
@@ -25,7 +32,6 @@ const CartItem = ({ id, imageSrc, price, description, removeFromBasket }) => {
           buttonType="buttonBlack"
           btnClicked={() => removeFromBasket(id)}
         />
-       
       </div>
 
       <hr />

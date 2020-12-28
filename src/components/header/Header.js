@@ -20,7 +20,7 @@ const Header = ({ user, basket }) => {
           data-toggle="collapse"
           data-target="#navbarToggle"
           aria-controls="navbarToggle"
-          aria-expanded="false"
+          aria-expanded={false}
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>

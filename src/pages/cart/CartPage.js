@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 import CartItem from '../../components/cartItem/CartItem';
 
 import { connect } from 'react-redux';
@@ -15,33 +16,39 @@ const CartPage = ({ basketItems, removeFromBasket }) => {
     <div className="cartpage mt-3">
       <div className="container ">
         <div>
-          <h1 id="leh">BAG</h1>
-          <p id="leh">{basketItems.length}</p>
+          <h1 >BAG</h1>
+          <p >{basketItems.length}</p>
           <hr />
         </div>
         <div className="cartItems">
-          {basketItems.length === 0 ?
-             <div>
-                 <h5 className="mt-4">You currently do not have any items to purchase now</h5>
-                 <h3 className="mt-4">Shop Now!!!</h3>
-              </div> : 
-            basketItems.map((basket) => {
-            console.log(typeof basket.id);
-            return (
-              <CartItem
-                key={basket.id}
-                imageSrc={basket.imageSrc}
-                price={basket.price}
-                description={basket.details}
-                removeFromBasket={removeFromBasket}
-                id={basket.id}
-              />
-            );
-          })}
+          {basketItems?.length === 0 ? (
+            <div>
+              <h5 className="mt-4">
+                You currently do not have any items to purchase now
+              </h5>
+              <h3 className="mt-4">Shop Now!!!</h3>
+            </div>
+          ) : (
+
+              basketItems.map((basketItem,) => (
+                <CartItem
+                  key={basketItem.id}
+                  imageSrc={basketItem.imageSrc}
+                  price={basketItem.price}
+                  description={basketItem.details}
+                  removeFromBasket={removeFromBasket}
+                  id={basketItem.id}
+                  quantity={basketItem.quantity}
+                />
+              ))
+          )}
         </div>
+
+       
+        
         <>
-        <CartSubTotal basketItems ={basketItems} />
-          </>
+          <CartSubTotal basketItems={basketItems} />
+        </>
       </div>
     </div>
   );

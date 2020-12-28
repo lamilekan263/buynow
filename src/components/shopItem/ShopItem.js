@@ -1,5 +1,5 @@
 import React from 'react';
-import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 
 import './ShopItem.css'
@@ -7,7 +7,7 @@ import './ShopItem.css'
 const ShopItem = ({image}) => {
     return (
       <div className="shopItem__container">
-        <LazyLoadImage
+        <img
           src={image}
           alt=""
           effect="blur"

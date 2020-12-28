@@ -10,6 +10,7 @@ import blackTop from "../../Assets/blackTop.jpg";
 // import sunyu from "../../Assets/sunyu.jpg";
 
 const INTITIAL_STATE = {
+  filteredShopData: [],
   shopdata: [
     {
       id: 1,
@@ -45,7 +46,7 @@ const INTITIAL_STATE = {
       imageSrc: blackTop,
       details:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit rerum accusantium itaque sit at adipisci, aliquidnobis voluptatum quos qui odit hic, dicta aliquam,praesentium eos minima consectetur quidem id!",
-      category: "Top",
+      category: "Tops",
     },
     {
       id: 5,
@@ -102,7 +103,7 @@ const shopReducer = (state=INTITIAL_STATE, action) => {
       case shopTypes.GET_DENIM:
         return {
           ...state,
-          shopdata : state.shopdata.filter(shop => shop.category === action.payload)
+          filteredShopData : state.shopdata.filter(shop => shop.category === action.payload)
         };
      
       default:
