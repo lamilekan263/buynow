@@ -14,7 +14,6 @@ const CartItem = ({
   removeFromBasket,
   quantity,
 }) => {
-  console.log(id);
   return (
     <div className="cartItem d-flex flex-wrap justify-content-center mt-3">
       <div className="cartItem__displayImage ">

@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import { deleteFromBasket } from '../../redux/basket/basketAction';
 import CartSubTotal from './CartSubTotal';
 
+import Button from '../../components/button/Button'
+import { Link } from 'react-router-dom';
 
 
 
@@ -16,39 +18,40 @@ const CartPage = ({ basketItems, removeFromBasket }) => {
     <div className="cartpage mt-3">
       <div className="container ">
         <div>
-          <h1 >BAG</h1>
-          <p >{basketItems.length}</p>
+          <h1>BAG</h1>
+          <p>{basketItems.length}</p>
           <hr />
         </div>
         <div className="cartItems">
           {basketItems?.length === 0 ? (
-            <div>
+            <div className="d-flex align-items-center justify-content-center flex-column">
               <h5 className="mt-4">
-                You currently do not have any items to purchase now
+                I'm sorry, Human. I'm Afraid there's nothing here.
               </h5>
-              <h3 className="mt-4">Shop Now!!!</h3>
+              <h3 className="mt-4">
+                It appears that your shopping cart is empty. we're eagerly
+                awaiting your money. Remember the more you spend, the quicker we
+                all get to buy Lamborghinis
+              </h3>
+              <Link to="/collections/shop">
+                <Button button="Shop Now" buttonType="buttonBlack" />
+              </Link>
             </div>
           ) : (
-
-              basketItems.map((basketItem,) => (
-                <CartItem
-                  key={basketItem.id}
-                  imageSrc={basketItem.imageSrc}
-                  price={basketItem.price}
-                  description={basketItem.details}
-                  removeFromBasket={removeFromBasket}
-                  id={basketItem.id}
-                  quantity={basketItem.quantity}
-                />
-              ))
+            basketItems.map((basketItem) => (
+              <CartItem
+                key={basketItem.id}
+                imageSrc={basketItem.imageSrc}
+                price={basketItem.price}
+                description={basketItem.details}
+                removeFromBasket={removeFromBasket}
+                id={basketItem.id}
+                quantity={basketItem.quantity}
+              />
+            ))
           )}
+          <>{basketItems && <CartSubTotal basketItems={basketItems} />}</>
         </div>
-
-       
-        
-        <>
-          <CartSubTotal basketItems={basketItems} />
-        </>
       </div>
     </div>
   );
