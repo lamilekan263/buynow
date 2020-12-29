@@ -56,7 +56,7 @@ const Footer = () => {
               <div>
                 <p className="footerLinks">Gift vouchers</p>
                 <p className="footerLinks">Size Guide</p>
-                <p className="footerLinks">Career at modnikky</p>
+                <p className="footerLinks">Career at BuyNow</p>
                 <p className="footerLinks">about us</p>
                 <p className="footerLinks">legal policies</p>
               </div>
@@ -81,7 +81,7 @@ const Footer = () => {
             <div className="col-sm-12 col-md-3 col-lg-3">
               <h3 className="footerLinks__header">Contact us</h3>
               <div>
-                <p className="footerLinks">hello@modnikky.com</p>
+                <p className="footerLinks">hello@BuyNow.com</p>
                 <p className="footerLinks">+79 1090 190</p>
                 <p className="footerLinks">visit us at Jumbo way</p>
               </div>
