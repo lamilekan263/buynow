@@ -1,0 +1,12 @@
+.wishlistCard{
+    max-height: 400px;
+   
+}
+.card__Img-container{
+    height: 200px;
+}
+.card__Img-container img{
+    height: 100%;
+    width: 100%;
+    object-fit:contain;
+}

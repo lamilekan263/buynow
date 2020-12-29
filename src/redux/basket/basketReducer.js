@@ -10,7 +10,6 @@ const initialState = {
 const basketReducer = (state = initialState, action) => {
     switch (action.type) {
       case basketTypes.ADD_TO_BASKET:
-
         return {
           ...state,
           basket: [...state.basket, action.payload],
@@ -19,7 +18,6 @@ const basketReducer = (state = initialState, action) => {
         const index = state.basket.findIndex(basketItem => basketItem.id === action.payload);
         let newBasket = [...state.basket];
         if (index >= 0) {
-
            newBasket.splice(index, 1)
         }
         return {

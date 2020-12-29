@@ -12,15 +12,14 @@ const CartItem = ({
   price,
   description,
   removeFromBasket,
-  quantity,
 }) => {
   return (
-    <div className="cartItem d-flex flex-wrap justify-content-center mt-3">
-      <div className="cartItem__displayImage ">
+    <div className="cartItem row justify-content-center mt-3">
+      <div className="cartItem__displayImage col-md-4 ">
         <img src={imageSrc} alt="" />
       </div>
 
-      <div className="cartdetails my-3 ">
+      <div className="cartdetails my-3 col-md-8 ">
         <p>{description}</p>
         <p>
           <strong>$</strong>

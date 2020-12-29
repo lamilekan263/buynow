@@ -11,7 +11,7 @@ const { combineReducers } = require("redux");
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist : ["basket"]
+  whitelist : ["basket", "favorites"]
 }
 
 const rootReducers = combineReducers({

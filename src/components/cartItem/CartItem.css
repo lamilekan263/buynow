@@ -1,6 +1,10 @@
-
+.cartItem__displayImage{
+    height: 250px;
+}
 .cartItem__displayImage img{
-    width: 100%;
+    
+    height: 100%;
+    object-fit:contain;
 }
 
 

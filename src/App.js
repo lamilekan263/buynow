@@ -7,6 +7,7 @@ import Footer from './components/footer/Footer';
  import Header from './components/header/Header';
 import { auth } from './firebase/firebase';
 import Spinner from './components/spinner/Spinner'
+import NotFound from './pages/NotFound/NotFound';
 
 const CartPage = lazy(() => import('./pages/cart/CartPage'));
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -15,7 +16,7 @@ const SignUp = lazy(() => import('./pages/SignUp/SignUp'));
 const Shop = lazy(() => import('./pages/shop/Shop'));
 const ItemDetails = lazy(() => import('./pages/itemDetails/ItemDetails'));
 const Payment = lazy(() => import('./pages/payment/Payment'))
-
+const FavoritesPage = lazy(() => import("./pages/favorites/FavoritesPage"));
  
 
 
@@ -44,6 +45,8 @@ function App({ setUser, noUser }) {
           <Route exact path="/collections/shop" component={Shop} />
           <Route exact path="/collections/shop/:id" component={ItemDetails} />
           <Route exact path="/checkout" component={Payment} />
+          <Route exact path="/wishlist" component={FavoritesPage} />
+          <Route  component={NotFound} />
         </Switch>
 
         <Footer />

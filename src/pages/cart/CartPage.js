@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import CartItem from '../../components/cartItem/CartItem';
 
 import { connect } from 'react-redux';
@@ -10,6 +10,7 @@ import CartSubTotal from './CartSubTotal';
 import Button from '../../components/button/Button'
 import { Link } from 'react-router-dom';
 
+import cartImg from "../../Assets/empty.png";
 
 
 
@@ -17,23 +18,24 @@ const CartPage = ({ basketItems, removeFromBasket }) => {
   return (
     <div className="cartpage mt-3">
       <div className="container ">
-        <div>
-          <h1>BAG</h1>
-          <p>{basketItems.length}</p>
-          <hr />
+        <div className="d-flex">
+          <ShoppingCartIcon />
+          <p>({basketItems.length})</p>
         </div>
+        <hr />
         <div className="cartItems">
           {basketItems?.length === 0 ? (
             <div className="d-flex align-items-center justify-content-center flex-column">
-              <h5 className="mt-4">
+              <img src={cartImg} alt="" />
+              <h6 className="mt-3">
                 I'm sorry, Human. I'm Afraid there's nothing here.
-              </h5>
-              <h3 className="mt-4">
+              </h6>
+              <h5 className="mt-3 text-align-center" style ={{textAlign: 'center'}}>
                 It appears that your shopping cart is empty. we're eagerly
                 awaiting your money. Remember the more you spend, the quicker we
                 all get to buy Lamborghinis
-              </h3>
-              <Link to="/collections/shop">
+              </h5>
+              <Link to="/collections/shop" className="my-5">
                 <Button button="Shop Now" buttonType="buttonBlack" />
               </Link>
             </div>
@@ -50,7 +52,11 @@ const CartPage = ({ basketItems, removeFromBasket }) => {
               />
             ))
           )}
-          <>{basketItems && <CartSubTotal basketItems={basketItems} />}</>
+          <>
+            {basketItems.length !== 0 && (
+              <CartSubTotal basketItems={basketItems} />
+            )}
+          </>
         </div>
       </div>
     </div>

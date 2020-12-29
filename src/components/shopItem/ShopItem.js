@@ -10,9 +10,7 @@ const ShopItem = ({image}) => {
         <img
           src={image}
           alt=""
-          effect="blur"
           className="shoptItem__imageContainer  shadow"
-          visibleByDefault={image.src === image}
         />
         
       </div>

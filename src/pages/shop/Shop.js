@@ -1,4 +1,6 @@
 import React from 'react'
+
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import ShopItem from '../../components/shopItem/ShopItem'
@@ -23,9 +25,14 @@ const Shop = ({ shopState, filterShop, filteredShopData }) => {
         <div className="row justify-content-between">
           <div className="col-sm-12 col-md-3">
             <div className="shop__categoriesList">
-              <h2 data-toggle="collapse" data-target="#demo">
-                category
-              </h2>
+              <div
+                className="d-flex  align-items-center"
+                data-toggle="collapse"
+                data-target="#demo"
+              >
+                <h2>category</h2>
+                <ArrowDownwardIcon />
+              </div>
               {categories.map((categoryList) => {
                 return (
                   <div key={categoryList}>
@@ -47,10 +54,10 @@ const Shop = ({ shopState, filterShop, filteredShopData }) => {
                 {filteredShopData.length <= 0
                   ? shopState.map((shop) => {
                       return (
-                        <div className="col-md-4 my-2">
+                        <div className="col-md-4 my-2" key={shop.id}>
                           <Link
                             to={`/collections/shop/${shop.id}`}
-                            key={shop.id}
+                            
                           >
                             {" "}
                             <ShopItem
@@ -59,7 +66,7 @@ const Shop = ({ shopState, filterShop, filteredShopData }) => {
                             />
                           </Link>
                         </div>
-                      )
+                      );
                     })
                   : filteredShopData.map((shop) => {
                       return (

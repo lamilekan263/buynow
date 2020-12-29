@@ -10,7 +10,7 @@ import './Header.css'
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase';
 
-const Header = ({ user, basket }) => {
+const Header = ({ user, basket, wishlist }) => {
   return (
     <div className="header  py-1">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -64,10 +64,10 @@ const Header = ({ user, basket }) => {
               </Link>
             </li>
             <li className="nav-item ">
-              <Link className="nav-link" to="#">
+              <Link className="nav-link" to="/wishlist">
                 <FavoriteBorderIcon className=" favoriteIcon p-0 " />
                 <strong>
-                  <sup>6</sup>
+                  <sup>{wishlist.length}</sup>
                 </strong>
               </Link>
             </li>
@@ -92,7 +92,8 @@ const Header = ({ user, basket }) => {
 const mapStateToProps = state => {
   return {
     user: state.user.currentUser,
-    basket : state.basket.basket
+    basket: state.basket.basket,
+    wishlist: state.favorites.favorite,
   };
 }
 
