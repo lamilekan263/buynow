@@ -10,13 +10,15 @@
      display: flex;
      align-items: flex-end;
      padding-bottom: 150px;
+     
 }
 
 .section__contentBox{
     width:400px;
-    
+   
     
 }
+
 .section__button{
     border: 1px solid white;
     width: max-content;

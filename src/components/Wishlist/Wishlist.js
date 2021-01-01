@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from 'react';
 import { connect } from "react-redux";
 import { removeFromFavorites } from '../../redux/favorite/favoritesAction';
@@ -41,6 +42,14 @@ const Wishlist = ({ wishlist, removeFromFavorites }) => {
     </div>
   );
 };
+
+Wishlist.propTypes = {
+  removeFromFavorites: PropTypes.any,
+  wishlist: PropTypes.shape({
+    length: PropTypes.number,
+    map: PropTypes.func
+  })
+}
 const mapStateToProps = (state) => {
   return {
     wishlist: state.favorites.favorite,

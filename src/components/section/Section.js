@@ -5,14 +5,14 @@ import './Section.css'
 
 const Section = ({ heading, details, buttonDetails, background }) => {
   return (
-    <div className="">
+    <div className="" style={{ backgroundColor: "black" }}>
       <section>
         <div
-          className="section__container"
+          className="section__container "
           style={{ backgroundImage: `url(${background})` }}
         >
           <div className="container">
-            <div className="section__contentBox">
+            <div className="section__contentBox" style={{ color: "white" }}>
               <h1>{heading}</h1>
               <p> {details}</p>
               <Button button={buttonDetails} buttonType="button" />
