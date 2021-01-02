@@ -15,7 +15,6 @@ const Section = ({ heading, details, background }) => {
             <div className="section__contentBox" style={{ color: "white" }}>
               <h1>{heading}</h1>
               <p> {details}</p>
-              
             </div>
           </div>
         </div>
