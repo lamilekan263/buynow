@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
+import ModalComponent from '../../components/modal/Modal';
 
 
 
@@ -11,12 +12,16 @@ const Payment = () => {
     const [ expiry , setexpiry ] = useState('')
     const [number, setnumber] = useState('')
   const [focus, setfocus] = useState("");
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // closemodalBox
+  const closedModal = () => setIsModalOpen(!isModalOpen);
+
+  // handling form submission
  const handleSubmit = e => {
     e.preventDefault()
-   if (name || cvc || expiry || number || focus !== '') {
-      
-    }
+  
+    setIsModalOpen(!isModalOpen);
   }
     return (
       <div className="my-5">
@@ -177,7 +182,7 @@ const Payment = () => {
               </form>
             </div>
             {/* modal */}
-          
+            <ModalComponent isModalOpen={isModalOpen} onCloseModal={closedModal}/>
           </div>
         </div>
       </div>
