@@ -19,13 +19,13 @@ const Home = () => {
           heading={firstSection.heading}
           background={firstSection.background}
           details={firstSection.details}
-          buttonDetails={firstSection.buttondDetails}
+        
         />
         <Section
           heading={secondSection.heading}
           background={secondSection.background}
           details={secondSection.details}
-          buttonDetails={secondSection.buttondDetails}
+          
         />
         <section>
           <div className="d-flex showcase__section">
@@ -38,7 +38,7 @@ const Home = () => {
           heading={thirdSection.heading}
           background={thirdSection.background}
           details={thirdSection.details}
-          buttonDetails={thirdSection.buttondDetails}
+        
         />
         <section>
           <div id="arrival" className="container my-5">
@@ -55,7 +55,7 @@ const Home = () => {
           heading={fourthSection.heading}
           background={fourthSection.background}
           details={fourthSection.details}
-          buttonDetails={fourthSection.buttonDetails}
+       
         />
       </div>
     );
