@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Button from '../../components/button/Button'
+
 import './Section.css'
 
-const Section = ({ heading, details, buttonDetails, background }) => {
+const Section = ({ heading, details, background }) => {
   return (
     <div className="" style={{ backgroundColor: "black" }}>
       <section>
@@ -15,7 +15,7 @@ const Section = ({ heading, details, buttonDetails, background }) => {
             <div className="section__contentBox" style={{ color: "white" }}>
               <h1>{heading}</h1>
               <p> {details}</p>
-              <Button button={buttonDetails} buttonType="button" />
+              
             </div>
           </div>
         </div>
