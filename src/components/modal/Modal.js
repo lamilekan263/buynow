@@ -29,15 +29,12 @@ const ModalComponent = ({ isModalOpen, onCloseModal }) => {
             alt=""
             style={{
               width: "100%",
-              marginTop: "0",
-              marginBottom: "0",
-              marginRight: "auto",
-              marginLeft: "auto",
+            
             }}
           />
         </div>
         <div className="my-4" style={{ textAlign: "center" }}>
-          <h4>Your Order is Successfull</h4>
+          <h4>Your Order was Successfull</h4>
           <h5>We now have time to get ourselves a lamborghini</h5>
           <h2>THANK YOU!!!</h2>
         </div>
